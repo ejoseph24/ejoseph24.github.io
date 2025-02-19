@@ -9,19 +9,7 @@
 </head>
 <body>
   <header>
-    <h1> Elijah Joseph's Eccentric Jaguar || ITIS-3135 </h1>
-    <nav>
-      <a href="./">Home</a>
-      ~
-      <a href="introduction.html">Introduction</a>
-      ~
-      <a href="contract.html">Contract</a>
-      ~
-      <a href="about.html">About</a>
-  
-    </nav>
-
-    </h1>
+    <div data-include="components/header.html"></div>
   </header>
   <main>
     <h2>Introduction</h2>
@@ -51,34 +39,12 @@
   </main>
 
   <footer>
-    <em>Eccentric power, Effortless charge.™</em>
-
-    <nav>
-      <a href="https://webpages.charlotte.edu/ejoseph7/">Charlotte.edu</a>
-      ~
-      <a href="https://github.com/ejoseph24">Github</a>
-      ~
-      <a href="https://ejoseph24.github.io/itis3135/">Github.io</a>
-      ~
-      <a href="https://www.freecodecamp.org/EliJoseph">freeCodeCamp</a>
-      ~
-      <a href=https://www.codecademy.com/profiles/ejoseph24">Codecademy</a>
-      ~
-      <a href="https://www.linkedin.com/in/elijah-joseph-4a7ba3247/">LinkedIn</a>
-    </nav>
-    <p><a href="joseph-corporation.com">Joseph Corporation©</a></p>
-    
-    <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
-      <img style="border:0;width:88px;height:31px" src="https://ejoseph24.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!">
-    </a>
-    <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
-      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
-    </a>
-
+    <div data-include="components/footer.html"></div>
   </footer>
   <script>
     document.getElementaryById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
     document.getElementaryById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
   </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>

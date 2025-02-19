@@ -2,7 +2,7 @@ body{
     background-color:steelblue;
     text-align: center;
     color: white;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Segoe UI', monospace;
 
 }
 
@@ -39,4 +39,12 @@ figcaption{
 
 div{
     text-align: center;
+}
+
+.navbar{
+    background: linear-gradient(to right, #ff9966 0%, #33ccff 100%);
+}
+
+.footer-links{
+    background: linear-gradient(to left, #ff9966 0%, #33ccff 100%);
 }
