@@ -12,7 +12,8 @@ a {
 }
 
 a:hover {
-    color: rgb(229, 93, 9);
+    color: rgb(229, 79, 9);
+    text-decoration: underline 3px solid rgb(229, 79, 9);
 }
 
 main {
@@ -24,6 +25,15 @@ main {
 h2 {
     text-align: center;
 }
+
+h3 {
+    color: white;
+}
+
+h3 a {
+    color: white;
+}
+
 
 img {
     width: 70%;
