@@ -58,3 +58,35 @@ div{
 .footer-links{
     background: linear-gradient(to left, #ff9966 0%, #33ccff 100%);
 }
+
+
+
+
+
+    /* Foundational Three */
+    main, .maincontainer {
+        width: 85%;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+
+    /* Rule Overrides For Laptops / Small Screens */
+    @media screen and ( min-width: 981px ) and ( max-width: 1400px ) {
+        #colorbox {
+            background-color:yellow;
+        }
+    }
+
+    /* Rule Overrides For Tablet Devices */
+    @media screen and ( min-width: 601px ) and ( max-width: 980px )  {
+        #colorbox {
+            background-color:orange;
+        }
+    }
+
+    /* Rule Overrides For Mobile Devices */
+    @media screen and ( min-width: 370px ) and ( max-width: 600px ) {
+        #colorbox {
+            background-color:red;
+        }
+    }
