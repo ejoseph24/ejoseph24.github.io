@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appalachian Air Academy</title>
+  <link rel="icon" href="images/cropped_logo.png" type="image/x-icon">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <style>
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow-x: hidden;
+        background-color:#BC4B51;
+        color: white;
+        font-family:'Gadugi', monospace
+    }
+
+
+    /*MOBILE*/
+    @media (max-width: 768px) {
+        nav {
+            padding: 8px 0; 
+        }
+        nav a {
+            font-size: 16px; 
+            padding: 8px 12px; 
+        }
+        .gallery figure {
+            flex-basis: 100%;
+            margin-bottom: 20px; 
+        }
+    }
+
+    /*================*/
+
+    /*NAVBAR*/
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 5px 0;
+        text-align: center;
+        z-index: 1000;
+    }
+    nav a {
+        color: white;
+        margin-left: 4rem;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        font-family: 'Bahnschrift', sans-serif;
+        font-size: 1.7rem;
+    }
+  
+    /*================*/
+
+  
+
+    /*COLORS: https://coolors.co/a0b9c6-3d5a80-f7ef99-bc4b51-a8e0ff */
+
+    /*HEADER & NAVBAR*/
+    header {
+        height: 80px;
+        background: #3D5A80;
+        text-align: center;
+        padding: 40px 0;
+    }
+    .stripe{
+        background: #F7EF99;
+        height: 8px;
+        width: 100%;
+    }
+    h1{
+        color: #A8E0FF;
+    }
+    h2{
+        color: #A8E0FF;
+        font-size: 2rem;
+    }
+    h1, h2, nav {
+        text-align: center;
+    }
+    /*================*/
+
+    /*HOMEPAGE GALLERY*/
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 800px; 
+        margin: 0 auto;
+    }
+
+    .gallery figure {
+        flex: 1 1 calc(50% - 10px); 
+        text-align: center;
+        margin: 0;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+    /*================*/
+
+
+    /*COST TABLE*/
+    .cost-table{
+        margin: auto;
+        width: 80%;
+        background: rgb(236, 236, 236);
+        border-collapse: collapse;
+        font-family: 'Bahnschrift', sans-serif;
+        max-width: 50%
+    }
+    th, td {
+        border: 2px solid black;
+        padding: 5px;
+        text-align: left;
+        color: black; 
+    }
+    th {
+        background: rgb(161, 161, 161); 
+    }
+    /*================*/
+
+    /*MAP*/
+    .map{
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16); 
+    }
+    /*================*/
+
+    /*FORM*/
+    .form-box{
+        display: flex;
+        align-items: center;
+        background-color: #3D5A80;
+        border-radius: 10px;
+        border: 4px solid #F7EF99;
+        width: 70%;
+        margin: 0 auto;
+        overflow: hidden;
+        max-width: 800px;
+        padding: 20px;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    form{
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: 'Bahnschrift', sans-serif;
+    }
+    /*================*/
+
+    /*FORM IMAGE*/
+    .form-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .form-caption{
+        text-align: center;
+    }
+    /*================*/
+
+    /*SECTION ANIMATION*/
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    .section {
+        transform: translateX(100%);  
+        opacity: 0;                   
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+        padding: 40px 100px;
+        padding-bottom: 140px;
+        position: absolute;
+    }
+    .section.active {
+        transform: translateX(0);  
+        opacity: 1;                
+    }
+    body {
+        position: relative;
+    }
+    /*================*/
+
+    .schedule-table{
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f0f0f0;
+    }
+
+    ul{
+        text-align: left;
+    }
+
+    a {
+        color:black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #F7EF99;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        color: #71816d;
+        background: linear-gradient(to right, #A8E0FF, #A8E0FF); 
+        padding: 20px 0;
+    }
+    footer a {
+        margin: 0 15px; 
+    }
+
+    .divider{
+        display: inline-block;
+        font-size: 20px;
+        color: #F7EF99;
+        margin: 0 8px;
+    }
+    
+    img {
+        width: auto;
+        max-height: 500px;
+        max-width: 600px; 
+        height: auto;
+        border-radius: 25px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16); 
+    }
+
+    figcaption {
+        font-style: italic;
+        color: #ffffff;
+        font-size: 1rem;
+        margin-top: 6px;
+        font-family: 'Gadugi', monospace
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        justify-content: center; 
+        gap: 15px; 
+    }
+
+    .logo {
+        width: 110px;
+        max-height: 100px;
+        max-width: 110px; 
+        height: 100px;
+        border-radius: 20px;
+    }
+
+    .contact-info{
+        margin-top: 40px;
+        line-height: 0.7
+    }
+
+    ul {
+        list-style-type: none; 
+        padding-left: 30px; 
+    }
+    ul li {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    ul li::before {
+        content: '✈'; 
+        font-size: 20px; 
+        left: -25px;
+        color: #F7EF99;
+        position: absolute;
+         
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+     
+  <div class="header-container">
+    <img src="images/cropped_logo.png" alt="Appalachian Air Academy Logo" class="logo"> 
+    <h1>Appalachian Air Academy</h1>
+  </div>
+
+  <div class="navbar">  
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+        <span class="divider">✈</span>
+        <a href="javascript:void(0);" onclick="showSection('about')">About Us</a> 
+        <span class="divider">✈</span>
+        <a href="javascript:void(0);" onclick="showSection('schedule')">Schedule</a> 
+        <span class="divider">✈</span>
+        <a href="javascript:void(0);" onclick="showSection('location')">Location</a>
+        <span class="divider">✈</span>
+        <a href="javascript:void(0);" onclick="showSection('costs')">Costs</a>
+        <span class="divider">✈</span>
+        <a href="javascript:void(0);" onclick="showSection('whywefly')">Why We Fly</a>
+        <span class="divider">✈</span>
+        <a href="javascript:void(0);" onclick="showSection('ai-prompts')">AI Prompts</a>
+      </nav>
+   </div>
+  </header>
+
+  <div class="stripe"></div>
+
+
+  <main>
+
+    <section id="home" class="section active">
+        <h2>Welcome to the Appalachian Air Academy!</h2>
+        <h3>Fuel your passion for flying...</h3>
+        <p>If you've been feeling the call of the skies, you're not alone. We are the largest school for aviation and largest supplier of aviation supplies in the state of North Carolina. Our academy offers industry-recognized flight training programs (from PPL to CFII), experienced instructors, and hands-on training to help you turn your passion into a successful career or enjoyable hobby. From beginners looking to earn their FAA private pilot's license to seasoned aviators, we have the expertise and tools you need.</p>
+        <div class="gallery">
+            <figure>
+            <img src="images/piper-red.jpg" alt="Our Piper Aircraft" class="homepage-image">   
+            <figcaption>Just one of the many well-maintained aircraft students can fly.</figcaption> 
+            </figure>
+
+            <figure>
+            <img src="images/maroon_cessna.jpg" alt="Our Cessna Aircraft" class="homepage-image">   
+            <figcaption>Our planes are equipped with the latest Garmin tech!</figcaption> 
+            </figure>
+
+            <figure>
+            <img src="images/bose-headset.jpg" alt="Bose Headset" class="homepage-image">   
+            <figcaption>We also sell premium-quality flight products.</figcaption> 
+            </figure>
+
+            <figure>
+            <img src="images/piper-cub.jpg" alt="Our Piper Cub Aircraft" class="homepage-image">   
+            <figcaption>Soar the skies with our Piper Cub!</figcaption> 
+            </figure>
+    </div>
+    </section>
+    
+    
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <h3>Our Journey</h3>
+        <p>In 1965, our founder Don Carter (a lifelong pilot) bought 3 airplanes. With a passion for teaching people how to fly, he began his first flight school in the Piedmont. He trained 6 young pilot's, all of whom became Top Gun graduates in the United States Navy and praised Don's teaching style. He continued to teach for over 40 years, partnering with airports and aviators across North Carolina to train pilots of all ages. Even after his passing in 2005, his legacy continues in the time-tested training methodologies.</p> 
+    
+        <p>Today, our schools own over 50 well-maintained aircraft. We have 20 Certified Flight Instructors, all Instrument Flight Rated and each with over 1000 hours of flight experience in the cockpit. Our schools have trained over 600 aviators over the years, and we can't wait for you to be the next! We're also your one-stop shop for anything aviation related, whether it's sectional charts, aviation books, headsets, flight calculators, or some high-quality aviation souvenirs. No matter your experience level or interest in aviation, we're here to guide you every step of the way!</p>
+        <div class="gallery">
+            <figure>
+                <img src="images/about-us-image.jpg" alt="Our Piper Aircraft" class="homepage-image">   
+                <figcaption>One of our students completing their proficiency flight.</figcaption> 
+            </figure>
+
+            <figure>
+                <img src="images/safir91.jpg" alt="Our Piper Aircraft" class="homepage-image">   
+                <figcaption>One of our instructors flying the Swedish Saab 91 Safir.</figcaption> 
+            </figure>
+        </div>
+    </section>
+
+
+    <section id="schedule" class="section">
+        <h2>Schedule</h2>
+        <h3>Flight Times</h3>
+        <p>The best part about flying is there is no bad time of day to soar (other than incliment weather)! We have early birds and midnight owls, and we'll train you for any time of day that you need currency in. We regularly update our schedule sheet of the pilots that have reserved an aircraft. Once you join our flying school, reserving a flight slot is easy. Just select the plane you want, a time that's free, and we'll ensure we have an instructor or supplies ready for you.</p>
+        <p>Note that according to Federal Aviation Regulations [14 CFR 61.57(b)(1)] night currency is attained when flying during the period 1 hour after susent and 1 hour before sunrise. It also requires performing 3 landings to a full stop within the preceding 90 days within this time period. As such, the specific timing may depend on the season.</p>
+        <iframe src="plane-schedule.html" style="border:none;" class="schedule-table">
+        </iframe>
+        <!--Note: The schedule-table was created in Google Sheets then converted into an HTML file.-->
+    </section>
+
+
+    <section id="location" class="section">
+        <h2>Location</h2>
+        <h3>Our Schools</h3>
+        <p>We have many locations for you to visit, no matter where you live in North Carolina. We have schools and aviation supply stores in all major airports across the state, including: </p>
+        <ul>
+            <li>Charlotte Douglas International Airport (KCLT)</li>
+            <li>Raleigh-Durham International Airport (KRDU)</li>
+            <li>Asheville Regional Airport (KAVL)</li>
+            <li>Wilmington International Airport (KILM)</li>
+            <li>Coastal Carolina Regional Airport (KEWN)</li>
+        </ul>
+        <p>If you want to visit the heart and soul of our company, visit our oldest and largest school at Piedmont Triad International Airport (KGSO)!</p>
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.708910603885!2d-79.93609682546116!3d36.102948072454055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885304a0c16ebc03%3A0x7cfb5c322ea44951!2sPiedmont%20Triad%20International%20Airport!5e1!3m2!1sen!2sus!4v1741987595801!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+    </section>
+
+
+    <section id="costs" class="section">
+        <h2>Costs</h2>
+        <h3>Budget Breakdown</h3>
+        <p>Here's a general breakdown of the costs to earn your private pilot's license. If this looks daunting, don't worry! Our school provides flexible payment options and loans from several aviation organizations. No matter you're budget, we'll get you soaring in the skies!</p>
+        <p>In addition to the basic flight training fees, there may be additional costs for materials such as textbooks, aviation charts, and flight accessories. If you are a student in our Ascending Aviators flight school program, you'll recieve these educational items at no extra charge. </p>
+        <div>
+            <table class="cost-table">
+                <tr>
+                    <th>Item/Training</th>
+                    <th>Price</th>
+                    <th>Timeframe</th>
+                </tr>
+                <tr>
+                    <td>Plane Rental w/ Fuel</td>
+                    <td>$150/hr</td>
+                    <td>~60 hours</td>
+                </tr>
+                <tr>
+                    <td>Instructor Cost</td>
+                    <td>$50/hr</td>
+                    <td>~40 hours</td>
+                </tr>
+                <tr>
+                    <td>Ground School</td>
+                    <td>$100</td>
+                    <td>One time</td>
+                </tr>
+                <tr>
+                    <td>FAA Private Pilot Knowledge Test</td>
+                    <td>$250</td>
+                    <td>One time</td>
+                </tr>
+                <tr>
+                    <td>Third Class Medical</td>
+                    <td>$150</td>
+                    <td>Variable on age</td>
+                </tr>
+                <tr>
+                    <td>Aircraft Insurance</td>
+                    <td>$100/year</td>
+                    <td>Per year</td>
+                </tr>
+                <tr>
+                    <td>Headset</td>
+                    <td>$800</td>
+                    <td>One time</td>
+                </tr>
+                <tr>
+                    <td>E6B Flight Calculator & Sectional Charts</td>
+                    <td>$70</td>
+                    <td>One time</td>
+                </tr>
+                <tr>
+                    <td>FAA Examiner Checkride Fee</td>
+                    <td>$700</td>
+                    <td>One time</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>~$13,170</strong></td>
+                    <td></td>
+                </tr>                   
+            </table>
+            
+        </div>
+        
+    </section>
+
+
+    <section id="whywefly" class="section">
+        <h2>Why We Fly</h2>
+        <h3>Join Us!</h3>
+        <p>We fly because we're passionate about bringing new aviators into the joy and freedom of flying. If you're interested in our flight training or aviation products, please contact us using the form below! Our representatives will reach out to you within 2 business days to help you get started on your aviation journey. On behalf of all of us at the Appalachian Air Academy, <em> Safe Skies! </em></p>
+        
+    <div class="form-box">
+        <form  id="form" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest" required>
+                <option value="">(select an option)</option>
+                <option value="1">PPL Flight Training</option>
+                <option value="2">IFR Flight Training</option>
+                <option value="3">CFI Flight Training</option>
+                <option value="4">Aviation Products</option>
+                <option value="5">Other</option>
+            </select>
+            <br><br>
+            <label for="comments">Questions/Comments?:</label>
+            <textarea id="comments" name="comments" rows="5" required></textarea>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <script src="submit.js"></script>
+
+        <figure>
+            <img src="images/sunset-plane.jpg" alt="Cessna in the sunset" class="form-image">   
+            <figcaption class="form-caption">The beauty and fun of flying is within your reach!</figcaption> 
+        </figure>
+    </div>
+    </section>
+
+    <section id="ai-prompts" class="section">
+        <h2>AI Prompts</h2>
+        <h3>AI was used for debugging issues, not for design or code generation.</h3>
+        <ul>
+            <li>Please debug the following javascript code, I'm running into an error since there's a lot of blank space under the single page view</li>
+            <li>How can I fix the issue of the iframe having weird feedback on click?</li>
+            <li>How can I put an image to the right of my form?</li>
+            <li>How adjust image size correctly for my flex gallery, please debug?</li>
+            <li>Please debug my CSS for the schedule sheet.</li>
+            <li>How can I make my code present better on mobile devices?</li>
+        </ul>
+        </section>
+
+
+  </main>
+
+<footer>   
+    <p>© 2025 Appalachian Air Academy</p>
+    <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
+      <img style="border:0;width:88px;height:31px" src="https://ejoseph24.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!">
+    </a>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
+    </a>
+  </footer>
+  <script>
+    document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+</body>
+</html>
