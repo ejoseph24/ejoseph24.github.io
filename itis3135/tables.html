@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elijah Joseph's Eccentric Jaguar || ITIS-3135 Home</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .complex-table {
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+        font-style: normal;
+    }
+
+    .complex-table th, .complex-table td {
+        border: 2px solid #333;
+        padding: 12px;
+    }
+    .complex-table th {
+        background-color: #333;
+        color: white;
+        font-weight: bold;
+    }
+    .complex-table td {
+        color: #333;
+    }
+    .complex-table tr:nth-child(odd) td {
+        background-color: #f2f2f2;
+    }
+
+    .complex-table tr:nth-child(even) td {
+        background-color: #c2bdbd;
+    }
+    .department {
+        background-color: #dcdcdc;
+        font-weight: bold;
+    }
+    .complex-table td#total_years, .complex-table td#total_salary {
+        font-weight: bold;
+        background-color: #e0e0e0;
+    }
+</style>
+
+
+  <header>
+    <div data-include="components/header.html"></div>
+  </header>
+  
+  <main>
+    <h2>HTML Tables - Eccentric Jaguar Jumper Cables</h2>
+
+    <h3>My Tabular Data</h3>
+    <ol>
+        <li>Ethan Walker ewalker@jaguarcables.com 32</li>
+        <li>Isaac Parker iparker@jaguarcables.com 9</li>
+        <li>Sophia Richards srichards@jaguarcables.com 25</li>
+        <li>Kimi Andrea kandrea@jaguarcables.com 2</li>
+        <li>Prema McPherion pmcpherion@jaguarcables.com 6</li>
+        <li>Madison Hayes mhayes@jaguarcables.com 9</li>
+        <li>George Bennett gbennett@jaguarcables.com 4</li>
+    </ol>
+
+    <h3>Simple Table of Employee Data</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Years of Service</th>
+        </tr>
+        <tr>
+            <td>Ethan Walker</td>
+            <td>ewalker@jaguarcables.com</td>
+            <td>32</td>
+        </tr>
+        <tr>
+            <td>Isaac Parker</td>
+            <td>iparker@jaguarcables.com</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>Sophia Richards</td>
+            <td>srichards@jaguarcables.com</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Kimi Andrea</td>
+            <td>kandrea@jaguarcables.com</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Prema McPherion</td>
+            <td>pmcpherion@jaguarcables.com</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Madison Hayes</td>
+            <td>mhayes@jaguarcables.com</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>George Bennett</td>
+            <td>gbennett@jaguarcables.com</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+
+    <h3>Complex Table of Employee Data</h3>
+<figure>
+    <table class="complex-table">
+        <tr>
+            <th id="department">Department</th>
+            <th id="name">Name</th>
+            <th id="email">Email</th>
+            <th id="service">Years of Service</th>
+            <th id="salary">Monthly Salary</th>
+        </tr>
+        <tr>
+            <td id="department_id_1" rowspan="2">Systems Management</td>
+            <td id="employee_name_1">Ethan Walker</td>
+            <td id="employee_email_1">ewalker@jaguarcables.com</td>
+            <td id="employee_service_years_1">32</td>
+            <td id="employee_salary_1">$320,000</td>
+        </tr>
+        <tr>
+            <td id="employee_name_2">Isaac Parker</td>
+            <td id="employee_email_2">iparker@jaguarcables.com</td>
+            <td id="employee_service_years_2">9</td>
+            <td id="employee_salary_2">$124,000</td>
+        </tr>
+        <tr>
+            <td id="department_id_2" rowspan="3">R&D</td>
+            <td id="employee_name_3">Sophia Richards</td>
+            <td id="employee_email_3">srichards@jaguarcables.com</td>
+            <td id="employee_service_years_3">25</td>
+            <td id="employee_salary_3">$230,000</td>
+        </tr>
+        <tr>
+            <td id="employee_name_4">Kimi Andrea</td>
+            <td id="employee_email_4">kandrea@jaguarcables.com</td>
+            <td id="employee_service_years_4">2</td>
+            <td id="employee_salary_4">$50,000</td>
+        </tr>
+        <tr>
+            <td id="employee_name_5">Prema McPherion</td>
+            <td id="employee_email_5">pmcpherion@jaguarcables.com</td>
+            <td id="employee_service_years_5">6</td>
+            <td id="employee_salary_5">$80,000</td>
+        </tr>
+        <tr>
+            <td id="department_id_3" rowspan="2">Customer Support</td>
+            <td id="employee_name_6">Madison Hayes</td>
+            <td id="employee_email_6">mhayes@jaguarcables.com</td>
+            <td id="employee_service_years_6">9</td>
+            <td id="employee_salary_6">$134,000</td>
+        </tr>
+        <tr>
+            <td id="employee_name_7">George Bennett</td>
+            <td id="employee_email_7">gbennett@jaguarcables.com</td>
+            <td id="employee_service_years_7">4</td>
+            <td id="employee_salary_7">$60,000</td>
+        </tr>
+        <tr>
+            <th colspan="3">Total Years of Service</th>
+            <td id="total_years">87</td>
+            <td id="total_salary">$998,000</td>
+        </tr>
+    </table>
+    <figcaption>Employee Information</figcaption>
+</figure>
+
+
+
+  </main>
+
+  <footer>
+    <div data-include="components/footer.html"></div>
+  </footer>
+  <script>
+    document.getElementaryById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementaryById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
