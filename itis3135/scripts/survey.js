@@ -3,33 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const coursesBox = document.getElementById("coursesbox");
     const addCourseButton = document.getElementById("addcourse");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if(!form.name.value.trim() || !form.mascot.value.trim() || !form.agreement.checked) {
-            alert("Please fill in all required fields and agree to the terms.");
-            return;
-        }
-        displayResults();
-    });
+    function getCourseList() {
+        const courseInputs = document.querySelectorAll("input[name='courses[]']");
+        const descriptionInputs = document.querySelectorAll("input[name='courseDescriptions[]']");
+        let courseList = '';
 
-    document.querySelector("input[type='reset']").addEventListener("click", () => {
-        form.reset();
-        coursesBox.innerHTML = "";
-    });
+        courseInputs.forEach((input, index) => {
+            const courseName = input.value;
+            const courseDescription = descriptionInputs[index].value;
+            if (courseName && courseDescription) {
+                courseList += `<li><strong>${courseName}:</strong> ${courseDescription}</li>`;
+            }
+        });
 
-    addCourseButton.addEventListener("click", () => {
-        const courseDiv = document.createElement("div");
-        courseDiv.innerHTML = `
-            <input type="text" name="courses[]" placeholder="ITSC 1600">
-            <input type="text" name="courseDescriptions[]" placeholder="I like learning about...">
-            <button type="button" class="delete-course">Delete</button>
-        `;
-        courseDiv.querySelector(".delete-course").addEventListener("click", () => {
-            courseDiv.remove();
-        });    
-        coursesBox.appendChild(courseDiv);
-    });
-
+        return courseList;
+    }
+    
     function displayResults() {
         const name = form.name.value;
         const mascot = form.mascot.value;
@@ -66,22 +55,36 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('main').innerHTML = introPage;
     }
 
-    function getCourseList() {
-        const courseInputs = document.querySelectorAll("input[name='courses[]']");
-        const descriptionInputs = document.querySelectorAll("input[name='courseDescriptions[]']");
-        let courseList = '';
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.name.value.trim() || !form.mascot.value.trim() || !form.agreement.checked) {
+            alert("Please fill in all required fields and agree to the terms.");
+            return;
+        }
+        displayResults();
+    });
 
-        courseInputs.forEach((input, index) => {
-            const courseName = input.value;
-            const courseDescription = descriptionInputs[index].value;
-            if(courseName && courseDescription) {
-                courseList += `<li><strong>${courseName}:</strong> ${courseDescription}</li>`;
-            }
-        });
 
-        return courseList;
-    }
 
+    document.querySelector("input[type='reset']").addEventListener("click", () => {
+        form.reset();
+        coursesBox.innerHTML = "";
+    });
+
+    addCourseButton.addEventListener("click", () => {
+        const courseDiv = document.createElement("div");
+        courseDiv.innerHTML = `
+            <input type="text" name="courses[]" placeholder="ITSC 1600">
+            <input type="text" name="courseDescriptions[]" placeholder="I like learning about...">
+            <button type="button" class="delete-course">Delete</button>
+        `;
+        courseDiv.querySelector(".delete-course").addEventListener("click", () => {
+            courseDiv.remove();
+        });    
+        coursesBox.appendChild(courseDiv);
+    });
+
+  
     function loadImage() {
         var image = document.getElementById('introImage').files[0];
         const imageUrl = URL.createObjectURL(image);
