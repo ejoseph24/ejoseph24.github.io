@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elijah Joseph's Eccentric Jaguar || ITIS-3135 Contract</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div data-include="components/header.html"></div>
+  </header>
+
+
+  <main>
+    <h3>Time to BYO Intro Page! Please fill out the form below so we can create your own page.</h3>
+    
+    <form>
+        <label for="name">Name: </label><br>
+        <input type="text" name="name" id="name" placeholder="Elijah Joseph"><br>
+
+        <label for="mascot">Mascot Name: </label><br>
+        <input type="text" name="mascot" id="mascot" placeholder="Eccentric Jaguar"><br>
+
+        <label for="userimage">Image: </label><br>
+        <input type="image" name="userimage" id="userimage"><br>
+
+        <label for="imgcaption">Image Caption: </label><br>
+        <input type="text" name="imgcaption" id="imgcaption" placeholder="In front of a plane I flew in."><br>
+
+        <label for="personalbackground">Personal Background: </label><br>
+        <textarea name="personalbackground" id="personalbackground" placeholder="I grew up in..." rows="4" cols="35"></textarea><br>
+
+        <label for="profbackground">Professional Background: </label><br>
+        <textarea name="profbackground" id="profbackground" placeholder="I studied cybersecurity for 7 years..." rows="4" cols="35"></textarea><br>
+
+        <label for="acadbackground">Academic Background: </label><br>
+        <textarea name="acadbackground" id="acadbackground" placeholder="I'm a sophomore at UNCC.." rows="4" cols="35"></textarea><br>
+
+        <label for="webbackground">Background in Web Development: </label><br>
+        <textarea name="webbackground" id="webbackground" placeholder="Little to no experience..." rows="2" cols="35"></textarea><br>
+
+        <label for="computerplatform">Primary Computer Platform: </label><br>
+        <input type="text" name="computerplatform" placeholder="Windows 10" id="computerplatform"><br>
+
+        <label for="courses">Courses currently taking: </label><br>
+        <div id="coursesbox"></div>
+        <button type="button" id="addcourse">Add Course</button>
+        <br><br>
+    
+        <label for="funny">Funny thing?: </label><br>
+        <textarea name="funny" id="funny" placeholder="I once crashed my bike..." rows="2" cols="35"></textarea><br>
+
+        <label for="otheritems">Anything else?: </label><br>
+        <textarea name="otheritems" id="otheritems" placeholder="I have a pilot's license..." rows="2" cols="35"></textarea><br>
+
+        <input type="checkbox" name="agreement" id="agreement">
+        <label for="agreement">I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.</label><br>
+        
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Reset">
+    </form>
+    
+
+
+    </main>
+
+
+
+
+
+
+
+<footer>
+  <div data-include="components/footer.html"></div>
+</footer>
+  <script>
+    document.getElementaryById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementaryById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/survey.js"></script>
+</body>
+</html>
