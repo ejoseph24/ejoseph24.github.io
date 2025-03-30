@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Corporation</title>
+  <!--https://coolors.co/1b4965-fcab64-71816d-c6ddf0-cbe896-->
+  <style>
+    body{
+        background-color:#1b4965;
+        color: white;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
+    }
+
+    .navbar{
+        background: linear-gradient(45deg, #fcab64, #cbe);
+        width: auto;
+    }
+
+    ul{
+        text-align: left;
+    }
+
+    h1, h2, nav {
+        text-align: center;
+    }
+
+    a {
+        color:black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #71816d;
+    }
+
+    footer{
+        text-align: center;
+        color: #71816d;
+        background: linear-gradient(to right, #c6ddf0, #dcebf4); 
+        padding: 20px 0;
+    }
+    
+    img {
+        width: 70%; 
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        justify-content: center; 
+        gap: 15px; 
+    }
+
+    .logo {
+        width: 90px; 
+        height: auto; 
+        border-radius: 20px;
+    }
+
+    .contact-info{
+        margin-top: 40px;
+        line-height: 0.7
+    }
+
+    ul {
+        list-style-type: none; 
+        padding-left: 30px; 
+    }
+    ul li {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    ul li::before {
+        content: '♦'; 
+        font-size: 15px; 
+        left: -25px;
+        color: #fcab64;
+        position: absolute;
+         
+    }
+
+    .final-par{
+        margin-top: 30px;
+    }
+
+    .first-par{
+        margin-bottom: 30px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        background-color: black;
+        color: white;
+        border: 1px solid #cbe;
+        font-family:'Trebuchet MS', sans-serif 
+    }
+    input, select, textarea {
+        border: 1px solid #fcab64;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+    }
+    label {
+        font-weight: light;
+        font-family:'Trebuchet MS', sans-serif 
+    }
+    .contactform {
+        max-width: 400px;
+        margin: auto;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    
+  <div class="header-container">
+    <img src="images/electric-jaguar-logo-resized.jpg" alt="electric jaguar" class="logo"> 
+    <h1> Joseph Corporation<sup>&#169</sup> </h1>
+  </div>
+
+  <div class="navbar">  
+    <nav>
+      <em> 
+      <a href="./">Home</a> ~
+      <a href="introduction.html">Introduction</a> ~
+      <a href="contract.html">Contract</a> ~
+      <a href="about.html">About</a></em>
+  
+    </nav>
+   </div>
+  </header>
+
+
+  <main>
+    <h2>Joseph Corporation Designs and Coding</h2>
+    <h3>Contact Form/Customer Service Request</h3>  
+
+    <div class="contactform">
+    <form action="#">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Elijah Joseph" required><br>
+
+        <label for="phone">Phone Number: </label>
+        <input type="tel" name="phone" id="phone" placeholder="9192234560"><br>
+
+        <label for="email">Email Address: </label>
+        <input type="text" name="email" id="email" placeholder="myemail@email.com" required><br>
+
+        <label for="rate">How would you rate our product?: </label>
+        <select name="rate" id="rate" required>
+            <option value="">Select an option</option>            
+            <option value="1">1 - Horrible</option>
+            <option value="2">2 - Miserable</option>
+            <option value="3">3 - Insufficient</option>
+            <option value="4">4 - Tolerable</option>
+            <option value="5">5 - Mediocre</option>
+            <option value="6">6 - Decent</option>
+            <option value="7">7 - Pretty Good</option>
+            <option value="8">8 - Very Good</option>
+            <option value="9">9 - Excellent</option>
+            <option value="10">10 - OUTSTANDING!!!</option>
+        </select><br>
+
+        <label for="issuecheck">Are you inquiring about an issue with your product?</label><br>
+        <input type="radio" name="issuecheck" id="issueyes" value="yes" required>Yes<br>
+        <input type="radio" name="issuecheck" id="issueno" value="no">No<br>
+
+        <label for="issue">Please let us know if there is an issue with your product: </label><br>
+        <textarea name="issue" id="issue" placeholder="My cables overloaded..." rows="4" cols="35"></textarea><br>
+
+        <label for="comments">Do you have any additional comments?: </label><br>
+        <textarea name="comments" id="comments" placeholder="I love these jumper cables!!!" rows="4" cols="35"></textarea><br>
+
+        <input type="checkbox" name="agreement" id="agreement" required>
+        <label for="agreement">I attest that all information included in this correspondence is legitimate and I'm totally NOT trying to attain a corporate freebie.</label><br>
+        
+        <input type="submit" value="Submit">
+
+        <input type="reset" value="Reset">
+    </form>
+    </div>
+  </main>
+
+
+
+  <footer>
+    <p><a href="joseph-corporation.com">Joseph Corporation©</a></p>
+    
+    <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
+      <img style="border:0;width:88px;height:31px" src="https://ejoseph24.github.io/itis3135/z_archives/html_validation.png" alt="Valid HTML!">
+    </a>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
+      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
+    </a>
+
+  </footer>
+  <script>
+    document.getElementaryById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementaryById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+</body>
+</html>
