@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
           cartItems.push(productName);
 
           localStorage.setItem("cart", JSON.stringify(cartItems));
-          alert(productName + " added to cart!");
+          alert(productName + " had been added to the cart.");
           updateCartCount(); 
       });
   });
@@ -180,27 +180,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   galleryItems.forEach(item => {
       item.addEventListener("click", function () {
-          const largeImageSrc = this.getAttribute("data-large-src"); // Get the large image URL
+          const largeImageSrc = this.getAttribute("data-large-src"); 
           const modal = document.getElementById("image-modal");
           const modalImg = document.getElementById("modal-img");
 
-          modal.style.display = "block"; // Show the modal
-          modalImg.src = largeImageSrc; // Set the modal image source to the larger image
+          modal.style.display = "block"; 
+          modalImg.src = largeImageSrc; 
       });
   });
 
-  // Close the modal when the user clicks on the "X"
   const closeBtn = document.querySelector(".close-btn");
   closeBtn.addEventListener("click", function () {
       const modal = document.getElementById("image-modal");
-      modal.style.display = "none"; // Hide the modal
+      modal.style.display = "none"; 
   });
 
-  // Close the modal when clicking outside the modal content
   window.addEventListener("click", function (event) {
       const modal = document.getElementById("image-modal");
       if (event.target === modal) {
-          modal.style.display = "none"; // Hide the modal when clicking outside of it
+          modal.style.display = "none";
       }
   });
 });
