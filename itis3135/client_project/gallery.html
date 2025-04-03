@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | CRL Merch Store</title>
+  <link rel="icon" href="images/crl_logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+
+  <main>
+    <h2 class="gallery-title">Explore Our Most Popular Designs</h2>
+
+
+    <div class="filter-container">
+        <label for="design-filter">Filter by Design: </label>
+        <select id="design-filter">
+          <option value="all">All Designs</option>
+          <option value="earthscience">Earth Science</option>
+          <option value="lifescience">Life Science</option>
+          <option value="computerscience">Computer Science</option>
+          <option value="engineering">Engineering</option>
+          <option value="architecture">Architecture</option>
+          <option value="mathematics">Mathematics</option>
+        </select>
+    </div>
+
+
+    <div class="gallery-container">
+
+      <div class="gallery-item computerscience">
+        <img src="images/shirt1.jpg" alt="T-Shirt Design 1">
+      </div>
+      <div class="gallery-item earthscience">
+        <img src="images/shirt2.jpg" alt="T-Shirt Design 2">
+      </div>
+      <div class="gallery-item computerscience">
+        <img src="images/shirt3.jpg" alt="T-Shirt Design 3">
+      </div>
+      <div class="gallery-item mathematics">
+        <img src="images/shirt4.jpg" alt="T-Shirt Design 4">
+      </div>
+      <div class="gallery-item lifescience">
+        <img src="images/shirt5.jpg" alt="T-Shirt Design 5">
+      </div>
+      <div class="gallery-item architecture">
+        <img src="images/shirt6.jpg" alt="T-Shirt Design 6">
+      </div>
+      <div class="gallery-item architecture">
+        <img src="images/shirt6.jpg" alt="T-Shirt Design 6">
+      </div>
+      <div class="gallery-item computerscience">
+        <img src="images/shirt6.jpg" alt="T-Shirt Design 6">
+      </div>
+      <div class="gallery-item earthscience">
+        <img src="images/shirt6.jpg" alt="T-Shirt Design 6">
+      </div>
+
+    </div>
+  </main>
+
+
+
+  <div data-include="components/footer.html"></div>
+
+
+  <script>
+    document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

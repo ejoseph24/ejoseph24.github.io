@@ -1,0 +1,174 @@
+body {
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; 
+    color: #333; 
+    text-align: center;
+}
+
+.navbar {
+    background: #bada55; 
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar a:hover {
+    color: #bada55;
+    background: #222;
+    border-radius: 5px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*LOGO*/
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/*=============================*/
+
+
+/*PRODUCT GRID*/
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.product-box {
+    width: 250px;
+    height: 250px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-box:hover {
+    transform: scale(1.05);
+}
+/*=============================*/
+.photo-section {
+    background: #fff;
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-section p {
+    font-style: italic;
+    font-size: 20px;
+    color: #555;
+}
+
+
+/*FOOTER*/
+footer {
+    background-color: #000; 
+    color: #bada55; 
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.social-links {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.social-links .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #bada55; 
+    text-decoration: none;
+}
+
+.social-links .social-icon:hover {
+    color: #ffffff; 
+}
+
+/*=============================*/
+
+
+/*VALIDATORS*/
+footer .validator-links {
+    margin-top: 15px; 
+}
+
+footer .validator-links img {
+    width: 80px; 
+    height: auto; 
+}
+/*=============================*/
+
+
+
+
+
+
+
+
+
+

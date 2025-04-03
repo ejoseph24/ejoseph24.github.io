@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | CRL Merch Store</title>
+  <link rel="icon" href="images/crl_logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+
+
+  <main>
+    <h2 class="page-title">Shop Our Collection</h2>
+    <div class="shop-container">
+      <div class="shop-item">
+        <img src="images/shirt1.jpg" alt="T-Shirt 1">
+        <p>Classic Logo Tee - $24.99</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="shop-item">
+        <img src="images/shirt2.jpg" alt="T-Shirt 2">
+        <p>Streetwear Edition - $29.99</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="shop-item">
+        <img src="images/shirt3.jpg" alt="T-Shirt 3">
+        <p>Limited Edition - $34.99</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+
+  <div data-include="components/footer.html"></div>
+  <script>
+    document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
