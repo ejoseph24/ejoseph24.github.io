@@ -1,4 +1,81 @@
-!function(l,d){l.HTMLInclude||(l.HTMLInclude=function(){function r(t,e){return t.getBoundingClientRect().top<=+e+l.innerHeight}function a(t,e){var o=new XMLHttpRequest;o.onreadystatechange=function(){4==o.readyState&&200==o.status&&e.forEach(function(t){var e=t.getAttribute("data-replace"),n=o.responseText;e&&e.split(",").forEach(function(t){var e=t.trim().split(":");n=n.replace(new RegExp(e[0],"g"),e[1])}),t.outerHTML=n;for(var r=(new DOMParser).parseFromString(n,"text/html").querySelectorAll("SCRIPT"),a=0,i=r.length;a<i;){var c=d.createElement("SCRIPT");r[a].src?c.src=r[a].src:c.innerHTML=r[a].innerHTML,d.head.appendChild(c),a++}})},o.open("GET",t,!0),o.send()}function t(e,n){l.addEventListener("scroll",function t(){r(e,n)&&(l.removeEventListener("scroll",t),a(e.getAttribute("data-include"),[e]))})}for(var e={},n=d.querySelectorAll("[data-include]:not([data-in])"),i=n.length;i--;){var c=n[i].getAttribute("data-include"),o=n[i].getAttribute("data-lazy");n[i].setAttribute("data-in",""),!o||o&&r(n[i],o)?(e[c]=e[c]||[],e[c].push(n[i])):t(n[i],o)}for(var u in e)a(u,e[u])}),l.HTMLInclude()}(window,document);
+!(function (l, d) {
+  if (!l.HTMLInclude) {
+      l.HTMLInclude = function () {
+          function isElementInViewport(el, offset) {
+              return el.getBoundingClientRect().top <= +offset + l.innerHeight;
+          }
+
+          function loadHTML(url, elements) {
+              var xhr = new XMLHttpRequest();
+              xhr.onreadystatechange = function () {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                      elements.forEach(function (el) {
+                          var replaceAttr = el.getAttribute("data-replace");
+                          var responseHTML = xhr.responseText;
+
+                          if (replaceAttr) {
+                              replaceAttr.split(",").forEach(function (pair) {
+                                  var parts = pair.trim().split(":");
+                                  responseHTML = responseHTML.replace(new RegExp(parts[0], "g"), parts[1]);
+                              });
+                          }
+
+                          el.outerHTML = responseHTML;
+
+                          var parsedHTML = new DOMParser().parseFromString(responseHTML, "text/html");
+                          var scripts = parsedHTML.querySelectorAll("script");
+
+                          scripts.forEach(function (script) {
+                              var newScript = d.createElement("script");
+                              if (script.src) {
+                                  newScript.src = script.src;
+                              } else {
+                                  newScript.innerHTML = script.innerHTML;
+                              }
+                              d.head.appendChild(newScript);
+                          });
+                      });
+                  }
+              };
+
+              xhr.open("GET", url, true);
+              xhr.send();
+          }
+
+          function lazyLoadElement(el, offset) {
+              l.addEventListener("scroll", function onScroll() {
+                  if (isElementInViewport(el, offset)) {
+                      l.removeEventListener("scroll", onScroll);
+                      loadHTML(el.getAttribute("data-include"), [el]);
+                  }
+              });
+          }
+
+          var elementsToLoad = {};
+          var elements = d.querySelectorAll("[data-include]:not([data-in])");
+
+          elements.forEach(function (el) {
+              var url = el.getAttribute("data-include");
+              var lazyOffset = el.getAttribute("data-lazy");
+
+              el.setAttribute("data-in", "");
+
+              if (!lazyOffset || (lazyOffset && isElementInViewport(el, lazyOffset))) {
+                  elementsToLoad[url] = elementsToLoad[url] || [];
+                  elementsToLoad[url].push(el);
+              } else {
+                  lazyLoadElement(el, lazyOffset);
+              }
+          });
+
+          for (var url in elementsToLoad) {
+              loadHTML(url, elementsToLoad[url]);
+          }
+      };
+
+      l.HTMLInclude();
+  }
+})(window, document);
 
 
 
