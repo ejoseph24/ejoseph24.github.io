@@ -1,3 +1,4 @@
+//HTMLInclude.min.js
 !(function (l, d) {
   if (!l.HTMLInclude) {
       l.HTMLInclude = function () {
@@ -83,11 +84,128 @@
 
 
 
+//SEARCH-BAR
 
 
+//===============================================
 
 
+//ADD-TO-CART
+document.addEventListener("DOMContentLoaded", function () {
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
+  document.querySelectorAll(".shop-item button").forEach(button => {
+      button.addEventListener("click", function () {
+          let product = button.parentElement;
+          let productName = product.querySelector("p").innerText;
+          cartItems.push(productName);
+
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+          alert(productName + " added to cart!");
+          updateCartCount(); 
+      });
+  });
+
+  let checkoutLink = document.querySelector(".cart a");  
+  if (checkoutLink) {
+      checkoutLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "checkout.html";
+      });
+  }
+
+  updateCartCount(); 
+});
+
+function updateCartCount() {
+  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartCount = document.querySelector(".cart-count");
+  if (cartCount) {
+    cartCount.textContent = cartItems.length;
+  }
+}
+
+//CHECKOUT.HTML
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname.includes("checkout.html")) { 
+      let cartItems = JSON.parse(localStorage.getItem("cart")) || []; 
+      let cartList = document.getElementById("cart-list");
+      let totalPriceElement = document.createElement("p");
+      totalPriceElement.id = "total-price";
+      document.querySelector("main").appendChild(totalPriceElement); 
+
+      let totalCost = 0;
+
+      if (cartItems.length === 0) {
+          cartList.innerHTML = "<p>Your cart is empty.</p>";
+          totalPriceElement.textContent = "Total: $0.00";
+      } else {
+          cartItems.forEach((item, index) => {
+              let priceMatch = item.match(/\$(\d+\.\d{2})/);
+              let price = priceMatch ? parseFloat(priceMatch[1]) : 0;
+              totalCost += price;
+
+              let cartItem = document.createElement("div");
+              cartItem.classList.add("cart-item");
+              cartItem.innerHTML = `
+                  <img src="images/shirt1.jpg" alt="Product Image"> 
+                  <p>${item}</p>
+                  <button class="remove-item" data-index="${index}">Remove</button>
+              `;
+              cartList.appendChild(cartItem);
+          });
+
+          totalPriceElement.textContent = `Total: $${totalCost.toFixed(2)}`;
+
+          document.querySelectorAll(".remove-item").forEach(button => {
+              button.addEventListener("click", function () {
+                  let index = this.getAttribute("data-index");
+                  cartItems.splice(index, 1); 
+                  localStorage.setItem("cart", JSON.stringify(cartItems)); 
+                  location.reload();
+                  updateCartCount(); 
+              });
+          });
+      }
+
+      updateCartCount(); 
+  }
+});
+
+//===============================================
+
+//GALLERY
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryItems = document.querySelectorAll(".gallery-item img");
+
+  galleryItems.forEach(item => {
+      item.addEventListener("click", function () {
+          const largeImageSrc = this.getAttribute("data-large-src"); // Get the large image URL
+          const modal = document.getElementById("image-modal");
+          const modalImg = document.getElementById("modal-img");
+
+          modal.style.display = "block"; // Show the modal
+          modalImg.src = largeImageSrc; // Set the modal image source to the larger image
+      });
+  });
+
+  // Close the modal when the user clicks on the "X"
+  const closeBtn = document.querySelector(".close-btn");
+  closeBtn.addEventListener("click", function () {
+      const modal = document.getElementById("image-modal");
+      modal.style.display = "none"; // Hide the modal
+  });
+
+  // Close the modal when clicking outside the modal content
+  window.addEventListener("click", function (event) {
+      const modal = document.getElementById("image-modal");
+      if (event.target === modal) {
+          modal.style.display = "none"; // Hide the modal when clicking outside of it
+      }
+  });
+});
+
+//===============================================
 
 
 // FILTER BY DESIGN

@@ -11,27 +11,76 @@
 <body>
     <div data-include="components/header.html"></div>
 
-
-  <main>
     <h2 class="page-title">Shop Our Collection</h2>
-    <div class="shop-container">
-      <div class="shop-item">
-        <img src="images/shirt1.jpg" alt="T-Shirt 1">
-        <p>Classic Logo Tee - $24.99</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="shop-item">
-        <img src="images/shirt2.jpg" alt="T-Shirt 2">
-        <p>Streetwear Edition - $29.99</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="shop-item">
-        <img src="images/shirt3.jpg" alt="T-Shirt 3">
-        <p>Limited Edition - $34.99</p>
-        <button>Add to Cart</button>
-      </div>
+
+    <div class="filter-container">
+        <label for="design-filter">Filter by Design: </label>
+        <select id="design-filter">
+          <option value="all">All Designs</option>
+          <option value="earthscience">Earth Science</option>
+          <option value="lifescience">Life Science</option>
+          <option value="computerscience">Computer Science</option>
+          <option value="engineering">Engineering</option>
+          <option value="architecture">Architecture</option>
+          <option value="mathematics">Mathematics</option>
+        </select>
     </div>
-  </main>
+
+    <main>
+        <div class="shop-container">
+          <div class="shop-item">
+            <img src="images/math-firststep.jpg" alt="Math First Step">
+            <p>Math First Step Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/coding.jpg" alt="Coding">
+            <p>Coding Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/math-equations.jpg" alt="Math Equations">
+            <p>Math Equations Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/lifescience-teachers.jpg" alt="Life Science Teachers">
+            <p>Life Science Teachers Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/biology-cell.jpg" alt="Cellfie">
+            <p>Cellfie Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/architect.jpg" alt="Architect Ingredients">
+            <p>Architect Ingredients Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/math-pun.jpg" alt="Math Pun">
+            <p>Math Pun Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/architecture.jpg" alt="Architect Measure">
+            <p>Architect Measure Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/tectonic.jpg" alt="Tectonic Plate Pun">
+            <p>Tectonic Plate Pun Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="shop-item">
+            <img src="images/cyber-stop.jpg" alt="Cybersecurity Stop Clicking Shirt">
+            <p>Cybersecurity Stop Clicking Tee - $24.99</p>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+    </main>
+    
 
 
   <div data-include="components/footer.html"></div>
