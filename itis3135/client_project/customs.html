@@ -17,14 +17,29 @@
     <p class="custom-text">Got a specific design in mind? Fill out the form below to request a custom design!</p>
 
     <form class="custom-form">
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" required>
+      <label for="name"><strong>Your Name:</strong></label>
+      <input type="text" id="name" required><br>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
+      <label for="email"><strong>Email:</strong></label>
+      <input type="email" id="email" required><br>
 
-      <label for="design">Describe Your Design:</label>
-      <textarea id="design" required></textarea>
+      <label for="design-upload"><strong>Upload your Design:</strong></label>
+      <input type="file"></input><br>
+
+      <label for="design"><strong>Describe Your Design:</strong></label>
+      <textarea id="design" required></textarea><br>
+
+
+      <p class="custom-text">You can also <strong>create a design!</strong> After creating your design, click the download button below and upload the file in the form.</p>
+      <div class="drawio-container">
+        <iframe id="drawio-frame"
+                src="https://embed.diagrams.net/?embed=1&ui=minimal&spin=1&proto=json"
+                width="100%" height="600px" frameborder="0"></iframe>
+      </div>
+
+    <button id="export-png">Download Design</button>
+
+
 
       <button type="submit">Submit Request</button>
     </form>

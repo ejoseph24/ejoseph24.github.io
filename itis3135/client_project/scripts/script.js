@@ -220,3 +220,20 @@ document.getElementById("design-filter").addEventListener("change", function() {
     });
 });
   
+// FILTER BY DESIGN - FOR SHOP
+document.addEventListener("DOMContentLoaded", function () {
+  const filterDropdown = document.getElementById("design-filter");
+  const shopItems = document.querySelectorAll(".shop-item");
+
+  filterDropdown.addEventListener("change", function () {
+      const selectedCategory = filterDropdown.value;
+
+      shopItems.forEach(item => {
+          if (selectedCategory === "all" || item.getAttribute("data-category") === selectedCategory) {
+              item.style.display = "flex"; 
+          } else {
+              item.style.display = "none"; 
+          }
+      });
+  });
+});

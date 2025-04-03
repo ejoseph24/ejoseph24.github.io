@@ -347,12 +347,27 @@ footer .validator-links img {
     border-radius: 10px;
     cursor: pointer;
 }
-
+/*--------------------------------*/
 .gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05) rotateY(8deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.gallery-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0) 70%);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease-in-out;
+}
+.gallery-item:hover::before {
+    left: 100%;
 }
 
+/*--------------------------------*/
 .modal {
     display: none;
     position: fixed;
@@ -450,10 +465,46 @@ footer .validator-links img {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
+/*-------------------------------*/
+.shop-item {
+    position: relative;
+    width: 250px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    perspective: 1000px;
+    overflow: hidden;
+}
 
 .shop-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotateY(8deg);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
 }
+
+.shop-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0) 70%);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease-in-out;
+}
+
+.shop-item:hover::before {
+    left: 100%;
+}
+
+/*-------------------------------*/
 
 .shop-item img {
     width: 100%;
@@ -482,5 +533,51 @@ footer .validator-links img {
 
 .shop-item button:hover {
     background-color: #468354;
+}
+/*=============================*/
+
+/*DRAW.IO FOR CUSTOMS*/
+.drawio-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+.custom-orders-main {
+    padding-bottom: 50px;
+}
+
+.custom-form button,
+#export-png {
+    background-color: #000;
+    color: #bada55;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+.custom-form button:hover,
+#export-png:hover {
+    background-color: #333;
+}
+
+/*=============================*/
+
+/*SELECT ELEMENT*/
+
+/*Text Boxes*/
+input:focus, textarea:focus {
+    outline: 2px solid #bada55;
+    transition: outline, box-shadow;
+}
+
+/*Dropdowns*/
+select:focus {
+    outline: 2px solid #bada55; 
+    transition: outline, box-shadow;
 }
 /*=============================*/
