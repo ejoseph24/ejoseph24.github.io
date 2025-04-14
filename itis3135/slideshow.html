@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elijah Joseph's Eccentric Jaguar || ITIS-3135 Home</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .slider {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 400px;
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+    }
+    .slides {
+        display: flex;
+        width: 1200%; 
+        height: 100%;
+        transition: transform 1s ease-in-out; 
+    }
+    .slides img {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+    .slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+    }
+
+</style>
+
+  <header>
+    <div data-include="components/header.html"></div>
+  </header>
+  
+  <main>
+    <h2>Slideshow</h2>
+
+        <div class="slider">
+          <div class="slides">
+            <img src="images/earbuds.jpg" alt="Earbuds">
+            <img src="images/light.jpg" alt="Light">
+            <img src="images/insect.png" alt="Insect">
+            <img src="images/jar.jpg" alt="Jar">
+            <img src="images/air_vent.jpg" alt="Air Vent">
+            <img src="images/highlighter.jpg" alt="Highlighter">
+            <img src="images/jacket.png" alt="Jacket">
+            <img src="images/octagon.jpg" alt="Octagon">
+            <img src="images/squirrel.png" alt="Squirrel">
+            <img src="images/eggs.jpg" alt="Eggs">
+            <img src="images/plane.jpg" alt="Plane">
+            <img src="images/helmet.jpg" alt="Helmet">
+          </div>
+        </div>
+
+    <ol>
+        <li><strong>E</strong>: <a href="images/earbuds.jpg">Earbuds</a></li>
+        <li><strong>L</strong>: <a href="images/light.jpg">Light</a></li>
+        <li><strong>I</strong>: <a href="images/insect.png">Insect</a></li>
+        <li><strong>J</strong>: <a href="images/jar.jpg">Jar</a></li>
+        <li><strong>A</strong>: <a href="images/air_vent.jpg">Air Vent</a></li>
+        <li><strong>H</strong>: <a href="images/highlighter.jpg">Highlighter</a></li>
+        <br>
+        <li><strong>J</strong>: <a href="images/jacket.png">Jacket</a></li>
+        <li><strong>O</strong>: <a href="images/octagon.jpg">Octagon</a></li>
+        <li><strong>S</strong>: <a href="images/squirrel.png">Squirrel</a></li>
+        <li><strong>E</strong>: <a href="images/eggs.jpg">Eggs</a></li>
+        <li><strong>P</strong>: <a href="images/plane.jpg">Plane</a></li>
+        <li><strong>H</strong>: <a href="images/helmet.jpg">Helmet</a></li>
+    </ol>
+
+    <p>Signed, <em>Elijah Joseph</em> (04/14/2025 3:00 pm)<p>
+  </main>
+
+
+  <footer>
+    <div data-include="components/footer.html"></div>
+  </footer>
+  <script>
+    document.getElementaryById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+    document.getElementaryById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/slideshow.js" defer></script>
+</body>
+</html>
