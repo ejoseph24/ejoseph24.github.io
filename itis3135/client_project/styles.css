@@ -597,30 +597,29 @@ select:focus {
 .slider {
     position: relative;
     width: 100%;
-    max-width: 1200px;
     height: 400px;
     margin: 20px auto;
     overflow: hidden;
-    border-radius: 10px;
-  }
-  
-  .slides {
+    border-radius: 0;
+}
+
+.slides {
     display: flex;
     width: 300%;
     height: 100%;
     animation: slide 30s infinite;
-  }
-  
-  .slides img {
+}
+
+.slides img {
     width: 100%;
     height: auto;
     max-height: 100%;
     flex-shrink: 0;
-    object-fit: contain;
+    object-fit: cover;
     background-color: #000; 
-  }
-  
-  @keyframes slide {
+}
+
+@keyframes slide {
     0%   { transform: translateX(0%); }
     5%   { transform: translateX(-100%); } 
     33%  { transform: translateX(-100%); } 
@@ -628,16 +627,21 @@ select:focus {
     66%  { transform: translateX(-200%); }  
     71%  { transform: translateX(0%); }     
     100% { transform: translateX(0%); }    
-  }
+}
 
-  .slider {
+.slider {
     display: flex;
     align-items: center;
     justify-content: center;
     background: #000;
-  }
+}
 
-  
+/*SLIDESHOW - MOBILE OPTIMIZATION*/
+@media (max-width: 768px) {
+    .slider {
+        height: 250px; 
+    }
+}
   /*=============================*/
 
   
