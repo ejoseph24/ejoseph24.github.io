@@ -149,6 +149,15 @@ footer {
     color: #ffffff; 
 }
 
+.footer-links {
+    color: #bada55;
+    text-decoration: none; 
+}
+
+.footer-links:hover {
+    color: #ffffff;
+}
+
 /*=============================*/
 
 
