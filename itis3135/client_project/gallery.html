@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | CRL Merch Store</title>
   <link rel="icon" href="images/crl_logo.png" type="image/x-icon">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
     <div data-include="components/header.html"></div>
 
-
   <main>
     <h2 class="gallery-title">Explore Our Most Popular Designs</h2>
-
 
     <div class="filter-container">
         <label for="design-filter">Filter by Design: </label>
@@ -29,49 +28,45 @@
         </select>
     </div>
 
-
     <div class="gallery-container">
 
         <div class="gallery-item computerscience">
-            <img src="images/password-hoodie.jpg" alt="Cybersecurity Password Hoodie">
-        </div>
-		<div class="gallery-item mathematics">
-            <img src="images/math-firststep.jpg" alt="Math First Step">
-        </div>
-        <div class="gallery-item computerscience">
-            <img src="images/coding.jpg" alt="Coding">
+            <img src="images/password-hoodie.jpg" data-large-src="images/password-hoodie.jpg" alt="Cybersecurity Password Hoodie">
         </div>
         <div class="gallery-item mathematics">
-            <img src="images/math-equations.jpg" alt="Math Equations">
+            <img src="images/math-firststep.jpg" data-large-src="images/math-firststep.jpg" alt="Math First Step">
         </div>
-		<div class="gallery-item lifescience">
-            <img src="images/lifescience-teachers.jpg" alt="Life Science Teachers">
+        <div class="gallery-item computerscience">
+            <img src="images/coding.jpg" data-large-src="images/coding.jpg" alt="Coding">
         </div>
-		<div class="gallery-item mathematics">
-            <img src="images/math-pun.jpg" alt="Math Pun">
+        <div class="gallery-item mathematics">
+            <img src="images/math-equations.jpg" data-large-src="images/math-equations.jpg" alt="Math Equations">
+        </div>
+        <div class="gallery-item lifescience">
+            <img src="images/lifescience-teachers.jpg" data-large-src="images/lifescience-teachers.jpg" alt="Life Science Teachers">
+        </div>
+        <div class="gallery-item mathematics">
+            <img src="images/math-pun.jpg" data-large-src="images/math-pun.jpg" alt="Math Pun">
         </div>
         <div class="gallery-item architecture">
-            <img src="images/architecture.jpg" alt="Architect Measure">
+            <img src="images/architecture.jpg" data-large-src="images/architecture.jpg" alt="Architect Measure">
         </div>
-		<div class="gallery-item computerscience">
-            <img src="images/cyber-stop.jpg" alt="Cybersecurity Stop Clicking Shirt">
+        <div class="gallery-item computerscience">
+            <img src="images/cyber-stop.jpg" data-large-src="images/cyber-stop.jpg" alt="Cybersecurity Stop Clicking Shirt">
         </div>
-    
+
     </div>
     
     <div id="image-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <img id="modal-img" src="" alt="">
+            <img id="modal-img" alt="Large image preview">
         </div>
     </div>
 
   </main>
 
-
-
   <div data-include="components/footer.html"></div>
-
 
   <script>
     document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
