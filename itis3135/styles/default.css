@@ -88,6 +88,11 @@ div{
     }
 
 
+/*Styling for p5.js*/
+canvas {
+    display: block;
+    margin: 0 auto;
+  }
 
 
 
