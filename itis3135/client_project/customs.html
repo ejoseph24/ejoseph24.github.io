@@ -10,14 +10,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    <div data-include="components/header.html"></div>
-
+  <div data-include="components/header.html"></div>
 
   <main>
     <h2 class="page-title">Custom Orders</h2>
     <p class="custom-text">Got a specific design in mind? Fill out the form below to request a custom design!</p>
 
-    <form class="custom-form">
+    <form class="custom-form" enctype="multipart/form-data">
       <label for="name"><strong>Your Name:</strong></label>
       <input type="text" id="name" required><br>
 
@@ -25,30 +24,26 @@
       <input type="email" id="email" required><br>
 
       <label for="design-upload"><strong>Upload your Design:</strong></label>
-      <input type="file"></input><br>
+      <input type="file" id="design-upload"><br>
 
       <label for="design"><strong>Describe Your Design:</strong></label>
       <textarea id="design" required></textarea><br>
-
 
       <p class="custom-text">You can also <strong>create a design!</strong> After creating your design, click the download button below and upload the file in the form.</p>
       <div class="drawio-container">
         <iframe id="drawio-frame"
                 src="https://embed.diagrams.net/?embed=1&ui=minimal&spin=1&proto=json"
-                width="100%" height="600px" frameborder="0"></iframe>
+                style="width: 100%; height: 600px;" allowfullscreen></iframe>
       </div>
 
-
-    <button id="export-png">Download Design</button>
-
-
+      <button id="export-png" type="button">Download Design</button>
 
       <button type="submit">Submit Request</button>
     </form>
   </main>
 
-
   <div data-include="components/footer.html"></div>
+
   <script>
     document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
     document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
