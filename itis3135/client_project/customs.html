@@ -8,6 +8,13 @@
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    #excalidraw-frame {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
 </head>
 <body>
   <div data-include="components/header.html"></div>
@@ -29,16 +36,16 @@
       <label for="design"><strong>Describe Your Design:</strong></label>
       <textarea id="design" required></textarea><br>
 
-      <p class="custom-text">You can also <strong>create a design!</strong> After creating your design, click the download button below and upload the file in the form.</p>
+      <p class="custom-text">You can also <strong>create a design!</strong> After creating your design, click the download button in the tool and upload the file in the form.</p>
       <div class="drawio-container">
-        <iframe id="drawio-frame"
-                src="https://embed.diagrams.net/?embed=1&ui=minimal&spin=1&proto=json"
-                style="width: 100%; height: 600px;" allowfullscreen></iframe>
+        <iframe id="excalidraw-frame"
+                src="https://excalidraw.com/#json"
+                allowfullscreen>
+        </iframe>
       </div>
 
-      <button id="export-png" type="button">Download Design</button>
-
       <button type="submit">Submit Request</button>
+
     </form>
   </main>
 
