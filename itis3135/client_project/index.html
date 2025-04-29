@@ -11,12 +11,14 @@
 </head>
 
 <body>
-    <div data-include="components/header.html"></div>
+  <div data-include="components/header.html"></div>
 
   <main>
     <h1>Welcome to the CRL Merch Store!</h1>
     <h2>Your one-stop-shop for any graphic design needs</h2>
+
     <section class="slider">
+      <h3 class="visually-hidden">Featured Slideshow</h3> 
       <div class="slides">
         <img class="slide active" src="images/best-shirts.PNG" alt="Slide 1">
         <img class="slide" src="images/t-shirt_print_2.png" alt="Slide 2">
@@ -24,22 +26,11 @@
       </div>
     </section>
 
-    <div class="slider-clicker"></div>
-
- 
-    
-
   </main>
 
-
-  
-  
-
   <div data-include="components/footer.html"></div>
-  <script>
-    document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
-    document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-  </script>
+
+
   <script src="scripts/script.js"></script>
 </body>
 </html>
